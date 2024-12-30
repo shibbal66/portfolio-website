@@ -57,7 +57,12 @@
             Mobile App Dev
           </h1>
 
-          <a href="#contact" class="button">Contact</a>
+          <a
+            href="https://bit.ly/m/shibbal-resume"
+            class="button"
+            target="_blank"
+            >My Resume</a
+          >
         </div>
 
         <div class="home__social">
@@ -280,7 +285,7 @@
             action="https://formsubmit.co/shibbalfarooq66@gmail.com"
             method="POST"
             class="contact__form"
-            id="contactForm"
+            onsubmit="disableSubmitButton()"
           >
             <!-- Name Field -->
             <input
@@ -308,6 +313,14 @@
               rows="10"
               required
             ></textarea>
+
+            <!-- Debugging -->
+            <input type="hidden" name="_captcha" value="false" />
+            <input
+              type="hidden"
+              name="_autoresponse"
+              value="Thank you for contacting us!"
+            />
 
             <!-- Submit Button -->
             <button

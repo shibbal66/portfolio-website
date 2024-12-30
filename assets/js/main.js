@@ -61,23 +61,9 @@ sr.reveal(".home__social-icon", { interval: 200 });
 sr.reveal(".skills__data, .work__img, .contact__input", { interval: 200 });
 
 /*===== FORM SUBMISSION HANDLING =====*/
-const form = document.getElementById("contactForm");
-const submitButton = document.getElementById("submitButton");
-
-if (form && submitButton) {
-  form.addEventListener("submit", function (event) {
-    // Prevent default form submission behavior
-    event.preventDefault();
-
-    // Show loader and disable button
-    submitButton.innerHTML = 'Submitting... <span class="loader"></span>';
-    submitButton.disabled = true;
-
-    // Simulate form submission and update button after completion
-    setTimeout(() => {
-      submitButton.textContent = "Submitted";
-      submitButton.disabled = true; // Keep button disabled
-      form.reset(); // Clear form fields
-    }, 3000); // Simulate a 3-second delay for submission
-  });
+function disableSubmitButton() {
+  const submitButton = document.getElementById("submitButton");
+  submitButton.style.backgroundColor = "gray"; // Change button color to gray
+  submitButton.style.cursor = "not-allowed"; // Change cursor to show it's disabled
+  submitButton.disabled = true; // Disable the button to prevent further clicks
 }
